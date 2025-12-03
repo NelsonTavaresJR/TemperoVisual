@@ -462,7 +462,7 @@ position: absolute;
 bottom: 310px;
 right: 480px;
 padding: 16px 35px;
-background: #d4a017;
+background: rgba(0, 0, 0, 0.5);
 color: white;
 font-size: 20px;
 font-weight: 700;
