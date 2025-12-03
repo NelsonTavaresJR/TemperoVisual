@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempero Visual — Trabalhos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-standalone">
+
+<header>
+  <div class="logo-container" onclick="location.href='index.html'">
+    <img src="img/8e69ca21-2530-46fa-98e1-03f57a3fbf63.png" class="logo">
+  </div>
+
+    <button class="menu-mobile" id="menu-btn" aria-label="Abrir menu">☰</button>
+
+  <nav id="menu-nav">
+    <a href="index.html">Sobre Nós</a>
+    <a href="trabalhos.html">Alguns Trabalhos</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section class="galeria-profissional">
+
+    <div class="bloco-galeria">
+        <img src="img/transformando meu quarto miniatura youtube.png" alt=""> 
+        <p class="descricao-galeria">
+            Trabalho que fizemos na pizzaria Ki´delicia, onde atualizamos a arte do banner da entrada.
+        </p>
+    </div>
+
+    <div class="bloco-galeria">
+        <img src="img/Imagem do WhatsApp de 2025-11-27 à(s) 22.38.31_6894eda0.jpg">
+        <p class="descricao-galeria">
+            Exemplo de uma melhoria em uma imagem do cardápio.
+        </p>
+    </div>
+
+    <div class="bloco-galeria">
+      <video controls class="video-galeria">
+          <source src="img/Vídeo do WhatsApp de 2025-11-27 à(s) 23.00.10_37ef7b03.mp4" type="video/mp4">
+          Seu navegador não suporta vídeos.
+      </video>
+  
+      <p class="descricao-galeria">
+          Cardápio Digital.
+      </p>
+  </div>
+</section>
+
+
+<footer>
+  © 2025 Tempero Visual — Todos os direitos reservados.
+</footer>
+
+
+<script>
+(function(){
+  // Toggle menu
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('menu-nav');
+  let overlay = document.getElementById('menu-overlay');
+
+  if (!btn || !nav) return;
+
+  // create overlay if missing
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'menu-overlay';
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function openMenu() {
+    nav.classList.add('active');
+    overlay.classList.add('show');
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.classList.remove('show');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (nav.classList.contains('active')) closeMenu();
+    else openMenu();
+  });
+
+  // close when clicking overlay
+  overlay.addEventListener('click', function(){ closeMenu(); });
+
+  // close on resize (to avoid stuck state)
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) {
+      nav.classList.remove('active');
+      overlay.classList.remove('show');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

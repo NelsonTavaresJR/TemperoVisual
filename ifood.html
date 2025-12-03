@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio iFood - Tempero Visual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-container" onclick="window.location.href='index.html'">
+    <img src="img/8e69ca21-2530-46fa-98e1-03f57a3fbf63.png" class="logo">
+    
+  </div>
+
+    <button class="menu-mobile" id="menu-btn" aria-label="Abrir menu">☰</button>
+
+  <nav id="menu-nav">
+    <a href="index.html#sobre">Sobre Nós</a>
+    <a href="trabalhos.html">Alguns Trabalhos</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<section class="page-content">
+  
+  <a class="btn-back" href="pacotes.html">Voltar</a>
+
+  <h2> Redes Sociais </h2>
+
+  <p class="description">
+    Instagram + Whatsapp
+  </p>
+
+  <div class="features">
+    <div class="feature-item"><h3>Formato</h3><p>Imagens ajustadas para feed, stories e catálogos.</p></div>
+    <div class="feature-item"><h3>Identidade visual </h3><p> Padrão visual profissional entre todas as postagens.</p></div>
+    <div class="feature-item"><h3>Aprimoramento de vitrines no WhatsApp</h3><p>Organização do catálogo com fotos mais claras e atraentes.</p></div>
+    <div class="feature-item"><h3>layout e cores</h3><p>Feed mais organizado, limpo e harmonioso.</p></div>
+  </div>
+
+</section>
+<footer>
+    © 2025 Tempero Visual — Todos os direitos reservados.
+</footer>
+
+    <button class="btn-buy"
+        onclick="window.open('https://victor-vitelli210.herospark.co/transformacao-de-imagens-assessoria-completa-no-ifood', '_blank')">
+    Comprar
+</button>
+
+
+<script>
+(function(){
+  
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('menu-nav');
+  let overlay = document.getElementById('menu-overlay');
+
+  if (!btn || !nav) return;
+
+ 
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'menu-overlay';
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function openMenu() {
+    nav.classList.add('active');
+    overlay.classList.add('show');
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.classList.remove('show');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (nav.classList.contains('active')) closeMenu();
+    else openMenu();
+  });
+
+ 
+  overlay.addEventListener('click', function(){ closeMenu(); });
+
+ 
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) {
+      nav.classList.remove('active');
+      overlay.classList.remove('show');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

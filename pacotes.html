@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempero Visual — Pacotes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-container" onclick="location.href='index.html'">
+    <img src="img/8e69ca21-2530-46fa-98e1-03f57a3fbf63.png" class="logo">
+  </div>
+
+    <button class="menu-mobile" id="menu-btn" aria-label="Abrir menu">☰</button>
+
+  <nav id="menu-nav">
+    <a href="index.html">Sobre Nós</a>
+    <a href="trabalhos.html">Alguns Trabalhos</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<section>
+  <h3 class="title">Nossos Pacotes</h3>
+
+  <div class="grid">
+    
+    <a href="edicao.html" class="card-link">
+      <div class="card"><h4>🎨 Edição de fotos</h4><p>Edição avançada.</p></div>
+    </a>
+    
+    <a href="fotografia.html" class="card-link">
+      <div class="card"><h4>🧾 Cardápio + Edição </h4><p>Renovação visual</p></div>
+    </a>
+
+    <a href="ifood.html" class="card-link">
+      <div class="card"><h4>📱 Social Media </h4><p>Impulsionar seu alcance.</p></div>
+    </a>
+
+    <a href="publicidade.html" class="card-link">
+      <div class="card"><h4>✨ Entrega Completa</h4><p>Material visual completo</p></div>
+    </a>
+  </div>
+</section>
+
+<footer>© 2025 Tempero Visual — Todos os direitos reservados.</footer>
+
+
+<script>
+(function(){
+
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('menu-nav');
+  let overlay = document.getElementById('menu-overlay');
+
+  if (!btn || !nav) return;
+
+  
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'menu-overlay';
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function openMenu() {
+    nav.classList.add('active');
+    overlay.classList.add('show');
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.classList.remove('show');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (nav.classList.contains('active')) closeMenu();
+    else openMenu();
+  });
+
+ 
+  overlay.addEventListener('click', function(){ closeMenu(); });
+
+ 
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) {
+      nav.classList.remove('active');
+      overlay.classList.remove('show');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

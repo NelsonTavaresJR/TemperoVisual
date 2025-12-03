@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempero Visual — Sobre Nós</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-container" onclick="location.href='index.html'">
+    <img src="img/8e69ca21-2530-46fa-98e1-03f57a3fbf63.png" class="logo">
+  </div>
+
+    <button class="menu-mobile" id="menu-btn" aria-label="Abrir menu">☰</button>
+
+  <nav id="menu-nav">
+    <a href="index.html">Sobre Nós</a>
+    <a href="trabalhos.html">Alguns Trabalhos</a>
+    <a href="pacotes.html">Pacotes</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="img/8e69ca21-2530-46fa-98e1-03f57a3fbf63.png" class="hero-logo">
+  <h2>A venda começa quando o Visual se destaca.</h2>
+  <p>Fotografia e edição profissional para restaurantes.</p>
+</div>
+
+<section>
+  <h3 class="title">Sobre Nós</h3>
+  <p class="sobre-texto-grande">
+    A Tempero Visual nasce para transformar ideias em experiências marcantes.
+    Unimos criatividade, estratégia e identidade visual para criar conteúdos que conquistam e fortalecem marcas.
+    Cada detalhe — do visual ao conceito — é pensado para entregar propósito, estética e impacto real.
+    Somos apaixonados por comunicação e resultados, temperando sua marca com autenticidade.
+  </p>
+  
+</section>
+
+<footer>© 2025 Tempero Visual — Todos os direitos reservados.</footer>
+
+<script>
+(function(){
+  
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('menu-nav');
+  let overlay = document.getElementById('menu-overlay');
+
+  if (!btn || !nav) return;
+
+  
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'menu-overlay';
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function openMenu() {
+    nav.classList.add('active');
+    overlay.classList.add('show');
+  }
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.classList.remove('show');
+  }
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if (nav.classList.contains('active')) closeMenu();
+    else openMenu();
+  });
+
+  
+  overlay.addEventListener('click', function(){ closeMenu(); });
+
+ 
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) {
+      nav.classList.remove('active');
+      overlay.classList.remove('show');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
