@@ -508,13 +508,14 @@ transform: scale(1.05);
   z-index: 99999;
 }
 }
-.sobre-texto-grande {
-max-width: 900px;      
-margin: 0 auto;        
-font-size: 22px;    
-line-height: 1.6;      
-text-align: center;   
-font-weight: 500;
+.sobre-texto {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
 }
 section, 
 .page-content {
@@ -811,4 +812,11 @@ z-index: 99999 !important;
     padding-left: 0 !important;
   }
 
+}
+@media (max-width: 768px) {
+  .sobre-texto {
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 1.7;
+  }
 }
